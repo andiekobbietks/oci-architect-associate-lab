@@ -1,0 +1,33 @@
+# Copy to terraform.tfvars and fill in. terraform.tfvars is git-ignored.
+
+# ---- Tenancy authentication -------------------------------------------------
+# Leave these empty to read credentials from ~/.oci/config instead.
+tenancy_ocid     = ""
+user_ocid        = ""
+fingerprint      = ""
+private_key_path = ""
+config_file_profile = "DEFAULT"
+
+# ---- Placement --------------------------------------------------------------
+region               = "uk-london-1"
+parent_compartment_ocid = "ocid1.tenancy.oc1..REPLACE_ME"
+
+# ---- Project ----------------------------------------------------------------
+project_name = "ociarchlab"
+environment  = "lab"
+
+# ---- Networking -------------------------------------------------------------
+vcn_cidr            = "10.20.0.0/16"
+public_subnet_cidr  = "10.20.0.0/24"
+private_subnet_cidr = "10.20.1.0/24"
+ssh_ingress_cidr    = "0.0.0.0/0"   # narrow this outside a lab
+
+# ---- Compute ----------------------------------------------------------------
+instance_shape     = "VM.Standard.E4.Flex"
+instance_ocpus     = 1
+instance_memory_gb = 8
+ssh_public_key     = ""
+
+# ---- Storage ----------------------------------------------------------------
+bucket_name_suffix = "data"
+block_volume_size_gb = 50

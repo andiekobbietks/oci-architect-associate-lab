@@ -1,0 +1,44 @@
+# ---- Terraform state (never commit) ----
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+crash.log
+crash.*.log
+
+# ---- Terraform working directory ----
+.terraform/
+**/.terraform/*
+
+# ---- Plan files (may contain secrets) ----
+*.tfplan
+
+# ---- Variable files: keep the example, ignore the real ones ----
+*.tfvars
+*.auto.tfvars
+*.auto.tfvars.json
+*.tfvars.json
+!terraform.tfvars.example
+
+# ---- OCI credentials ----
+*.pem
+oci_api_key*.pem
+oci_api_key_public.pem
+.oci/
+**/.oci/config
+.env
+.env.*
+
+# ---- CLI / override ----
+.terraformrc
+terraform.rc
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# ---- Editor / OS ----
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
